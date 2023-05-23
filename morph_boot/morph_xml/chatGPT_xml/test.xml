@@ -1,0 +1,63 @@
+<mujoco>
+    <compiler angle="degree"/>
+
+    <default>
+        <joint armature="0.1" damping="1" limited="true"/>
+        <geom conaffinity="0" condim="3" material="MatPlane" rgba="0.8 0.9 0.8 1"/>
+        <motor ctrllimited="true"/>
+    </default>
+
+    <worldbody>
+<!--        <geom name="ground" pos="0 0 0" size="100 0.1 100" type="plane"/>-->
+
+        <body name="torso" pos="0 0 1.2">
+            <joint axis="1 0 0" name="slide" type="slide" range="-0.1 0.1"/>
+            <geom name="torso" pos="0 0 0" size="0.2" type="sphere"/>
+<!--            <body name="thigh_left" pos="0.4 0 0">-->
+<!--                <joint axis="0 0 1" name="hip_left" type="hinge" range="-180 180"/>-->
+<!--                <geom name="thigh_left" pos="0 0 -0.4" size="0.15 0.4" type="capsule"/>-->
+<!--                <body name="shin_left" pos="0 0 -0.8">-->
+<!--                    <joint axis="0 0 1" name="knee_left" type="hinge" range="-180 180"/>-->
+<!--                    <geom name="shin_left" pos="0 0 -0.4" size="0.12 0.4" type="capsule"/>-->
+<!--                    <body name="foot_left" pos="0 0 -0.8">-->
+<!--                        <geom name="foot_left" pos="0 0 -0.2" size="0.2 0.15 0.05" type="box"/>-->
+
+            <body name="thigh_left" pos="0.6 0 0">
+                <joint axis="0 0 1" name="hip_left" type="hinge" range="-90 90"/>
+                <geom name="thigh_left" pos="0 0 -0.4" size="0.15 0.4" type="capsule"/>
+                <body name="shin_left" pos="0.6 0 -0.8"> <!-- adjust position along X axis -->
+                  <joint axis="0 0 1" name="knee_left" type="hinge" range="-90 90"/>
+                  <geom name="shin_left" pos="0 0 -0.4" size="0.12 0.4" type="capsule"/>
+                  <body name="foot_left" pos="0.6 0 -1.2"> <!-- adjust position along X axis -->
+                    <joint axis="1 0 0" name="ankle_left" type="hinge" range="-90 90"/>
+                    <geom name="foot_left" pos="0 0 -0.1" size="0.15 0.2 0.05" type="box"/>
+
+                    </body>
+                </body>
+            </body>
+            <body name="thigh_right" pos="-0.4 0 0">
+                <joint axis="0 0 1" name="hip_right" type="hinge" range="-180 180"/>
+                <geom name="thigh_right" pos="0 0 -0.4" size="0.15 0.4" type="capsule"/>
+                <body name="shin_right" pos="0 0 -0.8">
+                    <joint axis="0 0 1" name="knee_right" type="hinge" range="-180 180"/>
+                    <geom name="shin_right" pos="0 0 -0.4" size="0.12 0.4" type="capsule"/>
+                    <body name="foot_right" pos="0 0 -0.8">
+                        <geom name="foot_right" pos="0 0 -0.2" size="0.2 0.15 0.05" type="box"/>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+
+    <asset>
+        <material name="MatPlane" reflectance="0.5"/>
+    </asset>
+
+
+    <actuator>
+        <motor ctrlrange="-1 1" gear="100" joint="hip_left"/>
+        <motor ctrlrange="-1 1" gear="100" joint="knee_left"/>
+        <motor ctrlrange="-1 1" gear="100" joint="hip_right"/>
+        <motor ctrlrange="-1 1" gear="100" joint="knee_right"/>
+    </actuator>
+</mujoco>

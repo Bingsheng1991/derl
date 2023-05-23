@@ -1,0 +1,124 @@
+<!--<mujoco model="six_axis_robotic_arm">-->
+<!--  <option timestep="0.002" />-->
+<!--  <worldbody>-->
+<!--    <body name="base" pos="0 0 0">-->
+<!--      <joint name="joint1" type="hinge" axis="0 0 1" pos="0 0 0" />-->
+<!--      <geom type="box" size="0.1 0.1 0.1" rgba="0.8 0.1 0.1 1" />-->
+<!--      <body name="link1" pos="0.2 0 0">-->
+<!--        <joint name="joint2" type="hinge" axis="0 1 0" pos="0 0 0" />-->
+<!--        <geom type="box" size="0.2 0.05 0.05" rgba="0.1 0.8 0.1 1" />-->
+<!--        <body name="link2" pos="0.2 0 0">-->
+<!--          <joint name="joint3" type="hinge" axis="0 1 0" pos="0 0 0" />-->
+<!--          <geom type="box" size="0.2 0.05 0.05" rgba="0.1 0.1 0.8 1" />-->
+<!--          <body name="link3" pos="0.2 0 0">-->
+<!--            <joint name="joint4" type="hinge" axis="0 0 1" pos="0 0 0" />-->
+<!--            <geom type="box" size="0.2 0.05 0.05" rgba="0.8 0.8 0.1 1" />-->
+<!--            <body name="link4" pos="0.2 0 0">-->
+<!--              <joint name="joint5" type="hinge" axis="0 1 0" pos="0 0 0" />-->
+<!--              <geom type="box" size="0.2 0.05 0.05" rgba="0.1 0.8 0.8 1" />-->
+<!--              <body name="link5" pos="0.2 0 0">-->
+<!--                <joint name="joint6" type="hinge" axis="0 0 1" pos="0 0 0" />-->
+<!--                <geom type="box" size="0.2 0.05 0.05" rgba="0.8 0.1 0.8 1" />-->
+<!--                <body name="end_effector" pos="0.2 0 0">-->
+<!--                  <geom type="sphere" size="0.05" rgba="0.5 0.5 0.5 1" />-->
+<!--                </body>-->
+<!--              </body>-->
+<!--            </body>-->
+<!--          </body>-->
+<!--        </body>-->
+<!--      </body>-->
+<!--    </body>-->
+<!--  </worldbody>-->
+<!--  <actuator>-->
+<!--    <motor joint="joint1" ctrlrange="-1 1" ctrllimited="true" />-->
+<!--    <motor joint="joint2" ctrlrange="-1 1" ctrllimited="true" />-->
+<!--    <motor joint="joint3" ctrlrange="-1 1" ctrllimited="true" />-->
+<!--    <motor joint="joint4" ctrlrange="-1 1" ctrllimited="true" />-->
+<!--    <motor joint="joint5" ctrlrange="-1 1" ctrllimited="true" />-->
+<!--    <motor joint="joint6" ctrlrange="-1 1" ctrllimited="true" />-->
+<!--  </actuator>-->
+<!--</mujoco>-->
+
+
+<!--<mujoco model="abb_irb120_robotic_arm">-->
+<!--  <option timestep="0.002" />-->
+<!--  <worldbody>-->
+<!--    <body name="base" pos="0 0 0">-->
+<!--      <joint name="joint1" type="hinge" axis="0 0 1" pos="0 0 0.1" />-->
+<!--      <geom type="cylinder" size="0.05 0.1" rgba="0.8 0.1 0.1 1" />-->
+<!--      <body name="link1" pos="0 0 0.1">-->
+<!--        <joint name="joint2" type="hinge" axis="0 1 0" pos="0 0 0.25" />-->
+<!--        <geom type="cylinder" fromto="0 0 0 0 0 0.5" size="0.03" rgba="0.1 0.8 0.1 1" />-->
+<!--        <body name="link2" pos="0 0 0.5">-->
+<!--          <joint name="joint3" type="hinge" axis="0 1 0" pos="0.25 0 0" />-->
+<!--          <geom type="cylinder" fromto="0 0 0 0.5 0 0" size="0.03" rgba="0.1 0.1 0.8 1" />-->
+<!--          <body name="link3" pos="0.5 0 0">-->
+<!--            <joint name="joint4" type="hinge" axis="0 0 1" pos="0 0 0" />-->
+<!--            <geom type="box" size="0.15 0.05 0.05" rgba="0.8 0.8 0.1 1" />-->
+<!--            <body name="link4" pos="0.15 0 0">-->
+<!--              <joint name="joint5" type="hinge" axis="0 1 0" pos="0 0 0" />-->
+<!--              <geom type="box" size="0.05 0.1 0.05" rgba="0.1 0.8 0.8 1" />-->
+<!--              <body name="link5" pos="0 0.1 0">-->
+<!--                <joint name="joint6" type="hinge" axis="0 0 1" pos="0 0 0" />-->
+<!--                <geom type="box" size="0.05 0.05 0.1" rgba="0.8 0.1 0.8 1" />-->
+<!--                <body name="end_effector" pos="0 0 0.1">-->
+<!--                  <geom type="sphere" size="0.05" rgba="0.5 0.5 0.5 1" />-->
+<!--                </body>-->
+<!--              </body>-->
+<!--            </body>-->
+<!--          </body>-->
+<!--        </body>-->
+<!--      </body>-->
+<!--    </body>-->
+<!--  </worldbody>-->
+<!--  <actuator>-->
+<!--    <motor joint="joint1" ctrlrange="-1 1" ctrllimited="true" />-->
+<!--    <motor joint="joint2" ctrlrange="-1 1" ctrllimited="true" />-->
+<!--    <motor joint="joint3" ctrlrange="-1 1" ctrllimited="true" />-->
+<!--    <motor joint="joint4" ctrlrange="-1 1" ctrllimited="true" />-->
+<!--    <motor joint="joint5" ctrlrange="-1 1" ctrllimited="true" />-->
+<!--    <motor joint="joint6" ctrlrange="-1 1" ctrllimited="true" />-->
+<!--  </actuator>-->
+<!--</mujoco>-->
+
+
+<mujoco model="abb_irb120_robotic_arm">
+  <option timestep="0.002" />
+  <worldbody>
+    <body name="base" pos="0 0 0">
+      <joint name="joint1" type="hinge" axis="0 0 1" pos="0 0 0.1" />
+      <geom type="cylinder" size="0.05 0.1" rgba="0.8 0.1 0.1 1" />
+      <body name="link1" pos="0 0 0.1">
+        <joint name="joint2" type="hinge" axis="0 1 0" pos="0 0 0.25" limited="true" range="-1.5708 1.5708"/>
+        <geom type="cylinder" fromto="0 0 0 0 0 0.5" size="0.03" rgba="0.1 0.8 0.1 1" />
+        <body name="link2" pos="0 0 0.5">
+          <joint name="joint3" type="hinge" axis="0 1 0" pos="0.25 0 0" limited="true" range="-1.5708 1.5708"/>
+          <geom type="cylinder" fromto="0 0 0 0.5 0 0" size="0.03" rgba="0.1 0.1 0.8 1" />
+          <body name="link3" pos="0.5 0 0">
+            <joint name="joint4" type="hinge" axis="0 0 1" pos="0 0 0" limited="true" range="-1.5708 1.5708"/>
+            <geom type="box" size="0.15 0.05 0.05" rgba="0.8 0.8 0.1 1" />
+            <body name="link4" pos="0.15 0 0">
+              <joint name="joint5" type="hinge" axis="0 1 0" pos="0 0 0" limited="true" range="-1.5708 1.5708"/>
+              <geom type="box" size="0.05 0.1 0.05" rgba="0.1 0.8 0.8 1" />
+              <body name="link5" pos="0 0.1 0">
+                <joint name="joint6" type="hinge" axis="0 0 1" pos="0 0 0" limited="true" range="-1.5708 1.5708"/>
+                <geom type="box" size="0.05 0.05 0.1" rgba="0.8 0.1 0.8 1" />
+                <body name="end_effector" pos="0 0 0.1">
+                  <geom type="sphere" size="0.05" rgba="0.5 0.5 0.5 1" />
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor joint="joint1" ctrlrange="-1 1" ctrllimited="true" />
+    <motor joint="joint2" ctrlrange="-1 1" ctrllimited="true" />
+    <motor joint="joint3" ctrlrange="-1 1" ctrllimited="true" />
+    <motor joint="joint4" ctrlrange="-1 1" ctrllimited="true" />
+    <motor joint="joint5" ctrlrange="-1 1" ctrllimited="true" />
+    <motor joint="joint6" ctrlrange="-1 1" ctrllimited="true" />
+  </actuator>
+</mujoco>

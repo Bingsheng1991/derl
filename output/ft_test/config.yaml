@@ -1,0 +1,265 @@
+BODY:
+  FLOOR_OFFSET: 0.2
+  JOINT_ANGLE_LIST:
+  - - -30
+    - 0
+  - - 0
+    - 30
+  - - -30
+    - 30
+  - - -45
+    - 45
+  - - -45
+    - 0
+  - - 0
+    - 45
+  - - -60
+    - 0
+  - - 0
+    - 60
+  - - -60
+    - 60
+  - - -90
+    - 0
+  - - 0
+    - 90
+  - - -60
+    - 30
+  - - -30
+    - 60
+  JOINT_AXIS:
+  - x
+  - y
+  - xy
+  MOTOR_GEAR_RANGE:
+  - 150
+  - 300
+  - 50
+  SYMMETRY_PLANE:
+  - 1
+  - 0
+  - 1
+CFG_DEST: config.yaml
+CHECKPOINT_PERIOD: 100
+CUDNN:
+  BENCHMARK: false
+  DETERMINISTIC: true
+ENV:
+  AVOID_REWARD_WEIGHT: 100.0
+  CTRL_COST_WEIGHT: 0.001
+  FORWARD_REWARD_WEIGHT: 1.0
+  HEALTHY_REWARD: 0.0
+  KEYS_TO_KEEP:
+  - proprioceptive
+  MODULES:
+  - Agent
+  - Terrain
+  OBS_TYPES:
+  - position
+  - velocity
+  - imu_vel
+  - touch
+  - extremities
+  REACH_REWARD_PARAMS:
+  - 100.0
+  - 0.0
+  - 10
+  RESET_NOISE_SCALE: 0.005
+  SKIP_SELF_POS: true
+  STAND_HEIGHT_RATIO: 0.5
+  STAND_REWARD_WEIGHT: 0.0
+  STATE_RANGE:
+  - -100.0
+  - 100.0
+  TASK: locomotion
+  WALKER: ''
+  WRAPPERS: []
+  Z_RANGE:
+  - -0.1
+  - .inf
+ENV_NAME: Unimal-v0
+EVAL_PERIOD: -1
+EVO:
+  AGING_WINDOW_SIZE: 576
+  INIT_METHOD: limb_count_pop_init
+  INIT_POPULATION_SIZE: 4
+  IS_EVO: true
+  MUTATION_OPS:
+  - grow_limb
+  - joint_angle
+  - limb_params
+  - dof
+  - density
+  - gear
+  - delete_limb
+  NUM_PARTICIPANTS: 4
+  NUM_PROCESSES: 4
+  PERCENT_PARTICIPANTS: 5
+  SEARCH_SPACE_SIZE: 8
+  SELECTION_CRITERIA:
+  - __reward__forward
+  SELECTION_CRITERIA_OBJ:
+  - -1
+  TOURNAMENT_TYPE: aging_num
+HFIELD:
+  ADAPTIVE_OBS: false
+  ADAPTIVE_OBS_SIZE:
+  - 0.1
+  - 0.5
+  - 1.5
+  - 5.0
+  DIM: 2
+  GAP_DEPTH: -10
+  NUM_DIVS: 10
+  OBS_SIZE:
+  - 1
+  - 4
+  - 4
+  - 4
+  PADDING: 10
+  VIZ: false
+IMAGE:
+  CAMERA: side
+  HEIGHT: 1080
+  SAVE: false
+  WIDTH: 1920
+LIMB:
+  DENSITY_RANGE:
+  - 500
+  - 1000
+  - 100
+  HEIGHT_RANGE:
+  - 0.2
+  - 0.4
+  - 0.1
+  MAX_LIMBS: 10
+  NUM_LIMBS_RANGE:
+  - 2
+  - 8
+  - 1
+  RADIUS_RANGE:
+  - 0.05
+LOG_DEST: stdout
+LOG_PERIOD: -1
+MODEL:
+  EX_HIDDEN_DIMS:
+  - 64
+  - 64
+  OBS_FEAT_HIDDEN_DIMS:
+  - 64
+  PRO_HIDDEN_DIMS:
+  - 64
+  - 64
+NODE_ID: 0
+NUM_NODES: 1
+OBJECT:
+  BALL_RADIUS: 0.15
+  BOX_MASS: 1.0
+  BOX_POS: []
+  BOX_SIDE: 0.5
+  CLOSE_PLACEMENT_DIST: 10
+  FORWARD_PLACEMENT_DIST:
+  - 15
+  - 25
+  GOAL_POS: []
+  NUM_OBSTACLES: 20
+  OBSTACLE_LEN_RANGE:
+  - 0.5
+  - 3
+  - 0.5
+  OBSTACLE_WIDTH_RANGE:
+  - 0.5
+  - 3
+  - 0.5
+  PLACEMENT_BUFFER_LEN: 3
+  PLACEMENT_BUFFER_WIDTH: 5
+  SUCCESS_MARGIN: 0.5
+  TYPE: box
+OUT_DIR: ./output/ft_test
+PPO:
+  BASE_LR: 0.0003
+  BATCH_SIZE: 512
+  CHECKPOINT_PATH: ''
+  CLIP_EPS: 0.2
+  ENTROPY_COEF: 0.01
+  EPOCHS: 4
+  EPS: 1.0e-05
+  GAE_LAMBDA: 0.95
+  GAMMA: 0.99
+  KL_TARGET_COEF: 20.0
+  LINEAR_LR_DECAY: true
+  MAX_GRAD_NORM: 0.5
+  MAX_ITERS: 2
+  MAX_STATE_ACTION_PAIRS: 10000.0
+  NUM_ENVS: 16
+  TIMESTEPS: 256
+  USE_CLIP_VALUE_FUNC: true
+  VALUE_COEF: 0.5
+  VIDEO_LENGTH: 10
+  XML_PATH: ''
+RNG_SEED: 1409
+TERRAIN:
+  BOUNDARY_WALLS: true
+  BOWL_MAX_Z: 3.0
+  CENTER_FLAT: 0
+  CURVE_HEIGHT_RANGE:
+  - 0.6
+  - 1.2
+  - 0.1
+  FLAT_LENGTH_RANGE:
+  - 75
+  - 75
+  - 1
+  HFIELD_LENGTH_RANGE:
+  - 4
+  - 8
+  - 4
+  INCLINE_ANGLE: 0
+  NUM_STEPS: 8
+  PATROL_HALF_LEN: 3.0
+  RUGGED_SQUARE_CLIP_RANGE:
+  - 0.2
+  - 0.3
+  - 0.1
+  SIZE:
+  - 75
+  - 75
+  - 1
+  START_FLAT: 3
+  STEP_HEIGHT: 0.2
+  STEP_LENGTH_RANGE:
+  - 12
+  - 16
+  - 4
+  TYPES:
+  - curve_slope
+  WALL_LENGTH: 0.1
+TORSO:
+  CONDIM: 3
+  DENSITY_RANGE:
+  - 500
+  - 1000
+  - 100
+  HEAD_RADIUS_RANGE:
+  - 0.1
+  HEIGHT_RANGE:
+  - 0.15
+  NUM_TORSO_RANGE:
+  - 0
+  RADIUS_RANGE:
+  - 0.2
+UNIMAL_TEMPLATE: ./derl/envs/assets/unimal.xml
+USE_GPU: false
+VECENV:
+  IN_SERIES: 4
+  TYPE: SubprocVecEnv
+XML:
+  FILTER_PARENT: enable
+  GEOM_CONDIM: 3
+  GEOM_FRICTION:
+  - 0.7
+  - 0.1
+  - 0.1
+  NCONMAX: 200
+  NJMAX: 1000
+  SHADOWCLIP: 0.5
